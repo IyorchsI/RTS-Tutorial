@@ -1,34 +1,3 @@
-using UnityEngine;
-using UnityEngine.AI;
-
-public class UnitMovement : MonoBehaviour
-{
-    Camera cam;
-    NavMeshAgent agent;
-    public LayerMask ground;
-
-    public bool isCommandedToMove;
-
-    private void Awake()
-    {
-        cam = Camera.main;
-        agent = GetComponent<NavMeshAgent>();
-    }
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1)) // Cambia a 1 para el clic derecho
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
-            {
-                isCommandedToMove = true;
-                agent.SetDestination(hit.point);
-            }
-        }
-        if(agent.hasPath == false || agent.remainingDistance <= agent.stoppingDistance)
-        {
-            isCommandedToMove = false;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e1b5db8beab013827d88ca2f6a00f53f27f832a0eef626aff6abc4b8acb9de89
+size 1318

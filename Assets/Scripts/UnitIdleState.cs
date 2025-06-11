@@ -1,22 +1,3 @@
-using UnityEngine;
-
-public class UnitIdleState : StateMachineBehaviour
-{
-    AttackController attackController;
-
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        attackController = animator.transform.GetComponent<AttackController>();
-        attackController.SetIdleMaterial();
-    }
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       if(attackController.targetToAttack != null)
-        {
-            animator.SetBool("isFollowing", true);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2661c75a38c30c6e9be89a232bda18d37f35dc6e64127a504940ed0d26b8c67b
+size 988

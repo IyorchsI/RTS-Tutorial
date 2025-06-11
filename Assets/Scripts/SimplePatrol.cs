@@ -1,30 +1,3 @@
-using UnityEngine;
- 
-public class SimplePatrol : MonoBehaviour
-{
-    public float speed = 5.0f; // Adjust the speed of movement
- 
-    private bool movingForward = true;
-    private float timer = 0.0f;
-    private float switchDirectionTime = 5.0f; // Time to switch direction
- 
-    void Update()
-    {
-        timer += Time.deltaTime;
- 
-        if (timer >= switchDirectionTime)
-        {
-            movingForward = !movingForward;
-            timer = 0.0f;
-        }
- 
-        if (movingForward)
-        {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1d82cf7956d21780a8c9b87b169e6176d73102130904b782960cd38c39f9ab8f
+size 904
